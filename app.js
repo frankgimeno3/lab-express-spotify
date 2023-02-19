@@ -51,15 +51,6 @@ app.get('/albums/:id', (req, res, next) => {
         .catch(err => next(err))  
 });
 
-app.get('/albums/:id', (req, res, next) => {
-    let id = req.params.id
-    spotifyApi
-        .getArtistAlbums(id)
-        .then(data => {
-            res.render("albums", data.body)
-        })
-        .catch(err => next(err))  
-});
 
 app.get("/tracks/:trackId", (req, res, next) => {
     let trackId = req.params.trackId
